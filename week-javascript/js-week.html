@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js-week.css">
+</head>
+<body>
+  <dialog id="form-data">
+    <form id="form">
+      <div class="container">
+        <label><h1>Data Form</h1></label>
+        <div class="row">
+          <div class="info-form" id="info-form">
+            <label>No: <input type="number" id="number-input" placeholder="No." required></label>
+            <label>Name: <input type="text" id="name-input" placeholder="Name" required></label>
+            <label>Lastname: <input type="text" id="lastname-input" placeholder="Lastname" required></label>
+            <label>Email: <input type="email" id="email-input" placeholder="Email" required></label>
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <button id="confirm-btn" value="default" onclick="addData()">Confirm</button>
+        <button id="cancel-btn" value="cancel" formmethod="dialog">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+
+    <button id="form-btn">Add Data</button>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        
+      </tbody>
+    </table>
+    <output></output>
+
+<script src="js-week.js"></script>
+
+</body>
+</html>

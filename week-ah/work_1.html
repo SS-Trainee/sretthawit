@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="work_1.css">
+    <script src="work_1.js"></script>
+    <style>
+        table, td, th {  
+          border: 1px solid #ddd;
+          text-align: left;
+        }
+        
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- A modal dialog containing a form -->
+<dialog id="favDialog" style="width: 500px; height: 500px;">
+    <form id="form">
+      <p>
+        <div class="container">
+                    <label><h1>ลงทะเบียน<br></h1></label>
+            <div class="row">
+              <div class="col-sm-6" id="card1">
+                <label>เลขที่ : </label><br>
+                <label> ชื่อ : </label><br>
+                <label>นามสกุล :</label><br>
+                <label>อีเมล :</label><br>
+              </div>
+              <div class="col-sm-6" id="card2">
+                <input type="number" id="numberInput" placeholder="No." required></h2><br>
+                <input type="text" id="nameInput" placeholder="Name" required><br>
+                <input type="text" id="surnameInput" placeholder="Surname" required><br>
+                <input type="email" id="emailInput" placeholder="Email" required><br>
+              </div>
+            </div>
+        </div>
+      </p>
+      <div class="button">
+        <button id="confirmBtn" type="button" value="default" onclick="addData()">Confirm</button> &emsp;
+        <button value="cancel" formmethod="dialog" id="cancelBtn">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+  <p>
+    <button id="showDialog">Register</button>
+  </p>
+  <table >
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+
+    </tbody>
+  </table>
+  <output></output>
+  
+  <script>
+    const showButton = document.getElementById("showDialog");
+    const favDialog = document.getElementById("favDialog");
+    const outputBox = document.querySelector("output");
+    const selectEl = favDialog.querySelector("select");
+    const confirmBtn = favDialog.querySelector("#confirmBtn");
+    const cancelBtn = favDialog.querySelector("#cancelBtn");
+    const inputs = favDialog.querySelectorAll("input[required]");
+
+    // Remove the required attribute from all input fields
+    cancelBtn.addEventListener("click", () => {
+      inputs.forEach((input) => {
+        input.removeAttribute("required");
+      });
+    });
+
+    // "Show the dialog" button opens the <dialog> modally
+    showButton.addEventListener("click", () => {
+      favDialog.showModal();
+    });
+
+  </script>
+</body>
+</html>
